@@ -1,15 +1,7 @@
 import styled from 'styled-components'
 
-const circle = styled.div`
-  /* Adapt the colors based on primary prop */
-  background: ${props => props.primary ? "palevioletred" : "white"};
-  color: ${props => props.primary ? "white" : "palevioletred"};
-
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid palevioletred;
-  border-radius: 4px;
+const StyledDiv_2 = styled.div`
+  width: 200px; height: 200px; border: 7.5px solid rgb(114, 171, 255); border-radius: 100%; position: relative; display: flex; justify-content: center; align-items: center;
 `;
 
-export default circle
+export default StyledDiv_2
