@@ -8,12 +8,12 @@ import Circlefive from '../../Atoms/Reactor/circle5'
 import Circlesix from '../../Atoms/Reactor/circle6'
 import Circleseven from '../../Atoms/Reactor/circle7'
 import Circleeight from '../../Atoms/Reactor/circle8'
-import WeatherMain from '../../Organism/Weather/weather_main'
-import WeatherContainer from '../../Molecules/Weather_Container/weather_container'
-import WeatherCircle from '../../Atoms/Weather/weather_circle'
-import WeatherData from '../../Atoms/Weather/weather_data'
-import WeatherDay from '../../Atoms/Weather/weather_day'
-import WeatherNumber from '../../Atoms/Weather/weather_number'
+import WeatherMain from '../../Organism/Data/data_main'
+import WeatherContainer from '../../Molecules/Data_Container/data_container'
+import WeatherCircle from '../../Atoms/Date/data_circle'
+import WeatherData from '../../Atoms/Date/data_data'
+import WeatherDay from '../../Atoms/Date/data_day'
+import WeatherNumber from '../../Atoms/Date/data_number'
 const Root = () =>
 (
     <div>
