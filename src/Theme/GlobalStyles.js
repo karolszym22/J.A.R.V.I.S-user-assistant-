@@ -10,6 +10,7 @@ src: url('Avengers/Stark-6p31.ttf');
 }
 body {
     font-family: 'Avengers';
+    background-color: black ;
 }
  
 `;
