@@ -28,6 +28,16 @@ import NotesData from '../../Atoms/Notes/notes_data'
 import NotesRectangleOne from '../../Atoms/Notes/notes_rectangle_1'
 import NotesRectangleTwo from '../../Atoms/Notes/notes_rectangle_2'
 import NotesRectangleThree from '../../Molecules/Notes/notes_container'
+
+import MainWeather from '../../Organism/Weather/weather_main'
+import WeatherLocation from '../../Atoms/Weather/weather_location'
+import WeatherRectangleOne from '../../Atoms/Weather/weather_rectangle_1'
+import WeatherRectangleTwo from '../../Atoms/Weather/weather_rectangle_2'
+import WeatherContainer2 from '../../Molecules/Weather/weather_container'
+import WeatherState from '../../Atoms/Weather/weather_state'
+import WeatherTemp from '../../Atoms/Weather/weather_temp'
+import WeatherWind from '../../Atoms/Weather/weather_wind'
+
 const Root = () =>
 (
     <div>
@@ -85,6 +95,28 @@ const Root = () =>
               <NotesData>Karol</NotesData>
            </NotesRectangleThree>
         </MainNotes>
+        <MainWeather>
+           <WeatherLocation>
+              Slonecznie
+           </WeatherLocation>
+           <WeatherRectangleOne>
+              <WeatherRectangleTwo>
+                    <WeatherContainer2>
+                       <WeatherTemp>Pogoda:</WeatherTemp>
+                       <WeatherTemp>Slonecznie</WeatherTemp>
+                    </WeatherContainer2>
+                    <WeatherContainer2>
+                       <WeatherTemp>Temperatura</WeatherTemp>
+                       <WeatherTemp>14*</WeatherTemp>
+                    </WeatherContainer2>
+                    <WeatherContainer2>
+                       <WeatherTemp>Wiatr</WeatherTemp>
+                       <WeatherTemp>18/h</WeatherTemp>
+                    </WeatherContainer2>
+                    
+              </WeatherRectangleTwo>
+           </WeatherRectangleOne>
+        </MainWeather>
     </div>
 )
 
