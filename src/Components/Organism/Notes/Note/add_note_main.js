@@ -14,7 +14,7 @@ const StyledDiv = styled.div`
     
 `;
 
-const AddNotes = ({addNote, content}) =>
+const AddNotes = ({addNote}) =>
 (
     <StyledDiv>
         <AddNoteContainer>
