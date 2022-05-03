@@ -6,6 +6,7 @@ import AddNoteContainer from '../../../Molecules/Notes/Note/add-note_container'
 import { connect } from 'react-redux';
 import { addNote as addNoteAction } from '../../../../actions';
 import PropTypes from 'prop-types';
+import {Formik, Form, Field, ErrorMessage} from 'formik'
 
 const StyledDiv = styled.div`
     width: 90%;
@@ -18,12 +19,22 @@ const AddNotes = ({addNote}) =>
 (
     <StyledDiv>
         <AddNoteContainer>
-          <InputTittle placeholder='Tytuł'></InputTittle>  
-          <InputContent placeholder='Tekst'></InputContent>
-          <Buttom onClick={()=> addNote({
-              title: "elo",
-              content: "hahahaa",
-          })}>Dodaj Notke</Buttom>
+            <Formik initialValues={{title: '', content: ''}} 
+            onSubmit={(values) =>{
+                console.log(values)
+            }}>
+
+                {({isSubmitting}) =>
+                (
+                  <Form>
+                  <InputTittle as={Field} type="text" name="title" placeholder='Tytuł'></InputTittle>  
+                  <InputTittle placeholder='Tekst'></InputTittle>  
+                  <Buttom type="submit"
+                >Dodaj Notke</Buttom>
+                </Form>  
+                )}
+          
+          </Formik>
        </AddNoteContainer>
 
     </StyledDiv>
