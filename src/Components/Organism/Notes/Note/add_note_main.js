@@ -5,8 +5,7 @@ import InputTittle from '../../../Atoms/Notes/Note/add-note_input';
 import AddNoteContainer from '../../../Molecules/Notes/Note/add-note_container'
 import { connect } from 'react-redux';
 import { addNote as addNoteAction } from '../../../../actions';
-import PropTypes from 'prop-types';
-import {Formik, Form, Field, ErrorMessage} from 'formik'
+import {Formik, Form, Field} from 'formik'
 
 const StyledDiv = styled.div`
     width: 90%;
@@ -14,6 +13,13 @@ const StyledDiv = styled.div`
     justify-content: center;
     
 `;
+const StyledContainer = styled(Form)`
+
+display: flex ;
+flex-direction: column;
+ 
+
+`
 
 const AddNotes = ({addNote}) =>
 (
@@ -21,17 +27,35 @@ const AddNotes = ({addNote}) =>
         <AddNoteContainer>
             <Formik initialValues={{title: '', content: ''}} 
             onSubmit={(values) =>{
-                console.log(values)
+                addNote(values)
             }}>
 
-                {({isSubmitting}) =>
+                {({isSubmitting, values, handleChange, handleBlur}) =>
                 (
-                  <Form>
-                  <InputTittle as={Field} type="text" name="title" placeholder='Tytuł'></InputTittle>  
-                  <InputTittle placeholder='Tekst'></InputTittle>  
+                  <StyledContainer>
+                  <InputTittle
+                   as={Field}
+                   type="text"
+                   name="title"
+                   placeholder='Tytuł'
+                   onChange = {handleChange}
+                   onBlur = {{handleBlur}}
+                   value = {values.title}
+                   >
+                   
+                   </InputTittle>  
+                  <InputContent
+                    as={Field}
+                    type="text"
+                    name="content"
+                    placeholder='Tekst'
+                    onChange = {handleChange}
+                    onBlur = {{handleBlur}}
+                    value = {values.content}
+                  ></InputContent>  
                   <Buttom type="submit"
                 >Dodaj Notke</Buttom>
-                </Form>  
+                </StyledContainer>  
                 )}
           
           </Formik>
