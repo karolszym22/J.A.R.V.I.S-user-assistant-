@@ -4,17 +4,17 @@ import { ThemeProvider } from "styled-components"
 import GlobalStyle from "../../Theme/GlobalStyles"
 import { theme } from "../../Theme/main_theme"
 import Main from '../Organism/Menu/main-menu'
+import NotesMenu from '../Organism/Notes/NotesMain/notes_main'
 
 
-const MainTemplate = ({children}) =>
-(
+
+const MainTemplate = ({children}) => (
     <div>
       <GlobalStyle/>
       <Main></Main>
       <ThemeProvider theme={theme}>
         <>{children}</>
-        
-     </ThemeProvider>
+      </ThemeProvider>
     </div>
 )
 

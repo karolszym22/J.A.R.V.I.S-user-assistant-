@@ -5,8 +5,10 @@ import Help from '../Help/help'
 import Notes from '../Notes/note'
 import Weather from '../Weather/weather'
 import Main from '../Main/main'
+import Reactor from '../Reactor/reactor'
 import { Provider } from 'react-redux';
 import store from '../../../store/index'
+import Search from '../Search/Search'
 const Root = () =>
 ( 
 
@@ -15,10 +17,11 @@ const Root = () =>
   <MainTemplate>
   
      <Routes>
-           <Route exact path='/' element= {<Main/>}/>
+           <Route exact path='/' element= {<Reactor />}/>
            <Route  path='/Notes' element = {<Notes/>}/>
            <Route  path='/Weather' element = {<Weather/>}/>
            <Route  path='/Help' element = {<Help/>}/>
+           <Route  path='/Szukaj' element = {<Search/>}/>
      </Routes>
     
   </MainTemplate>

@@ -14,9 +14,11 @@ const Menu = () =>
     <StyledDiv>
         <MenuContainer>
               <MenuNav as={NavLink} to="/">Glowna</MenuNav>
+              <MenuNav as={NavLink} to="/Szukaj">Wikipedia</MenuNav>
               <MenuNav as={NavLink} to="/Weather">Pogoda</MenuNav>
               <MenuNav as={NavLink} to="/Notes">Notatki</MenuNav>
               <MenuNav as={NavLink} to="/Help">Pomoc</MenuNav>
+              
         </MenuContainer>
     </StyledDiv>
 )
