@@ -9,6 +9,7 @@ const input = styled.input`
   color: rgb(0, 205, 209);
   height: 40px;
   width: 260px ;
+  margin: 10px 0px;
   padding: 0 10px;
   &::placeholder {
        content: "asdasd" ;
