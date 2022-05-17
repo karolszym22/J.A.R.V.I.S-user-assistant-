@@ -1,20 +1,19 @@
 import styled from 'styled-components'
 import {Formik, Form, Field} from 'formik'
 import SearchInput from '../../Atoms/Search/search_input'
-
+import Button from '../../Atoms/Notes/Note/add-note_button'
 const StyledForm = styled(Form)`
 
-display: flex ;
-flex-direction: column;
+
+width: 100% ;
 `
 
 const Search = () =>
 (
-    <div>
-    <div>
+    
         <Formik  initialValues={{content: ''}} 
         onSubmit={(values) =>{
-            console.log(values)
+          window.open(`https://pl.wikipedia.org/wiki/${values.content}`, "_blank")
         }}>
 
             {({isSubmitting, values, handleChange, handleBlur}) =>
@@ -29,13 +28,12 @@ const Search = () =>
                 onBlur = {{handleBlur}}
                 value = {values.content}
               ></SearchInput>  
+              <Button type="submit">Szukaj</Button>
             </StyledForm>  
             )}
       
       </Formik >
-   </div>
-
-</div>
+   
 )
 
 export default Search

@@ -10,7 +10,8 @@ src: url('Avengers/Stark-6p31.ttf');
   background-color: Transparent;
   background-repeat:no-repeat;
   border: 2px solid  rgb(0, 205, 209);
-  border-radius: 15px ;
+  border-radius: 15px;
+  margin: 10px ;
 `;
 
 export default buttom;
