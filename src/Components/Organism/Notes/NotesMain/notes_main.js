@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import NotesTitle from '../../../Atoms/Notes/notes_title'
+import React from 'react'
 import NotesElementOne from '../../../Atoms/Notes/notes_rectangle_1'
 import NotesElementTwo from '../../../Atoms/Notes/notes_rectangle_2'
 import NotesData from '../../../Atoms/Notes/notes_data'

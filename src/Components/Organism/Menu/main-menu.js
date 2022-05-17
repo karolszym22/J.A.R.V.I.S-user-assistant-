@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components'
 import MenuContainer from '../../Molecules/Menu/menu_container';
 import MenuNav from '../../Atoms/Menu/menu_nav'

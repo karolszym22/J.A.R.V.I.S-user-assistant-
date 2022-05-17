@@ -11,9 +11,9 @@ const StyledDiv = styled.div`
 const StyledDiv_2 = styled.div`
   width: 50%;  display: flex; flex-direction: column; 
   align-items: center; color: rgb(80, 208, 228);
-  border: 5px solid rgb(0, 205, 209) ;
   height: 45px ;
   border-radius: 20px ;
+  position: relative;
   `;
   
   

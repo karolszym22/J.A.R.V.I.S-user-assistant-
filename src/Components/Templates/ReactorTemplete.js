@@ -8,7 +8,7 @@ const StyledDiv = styled.div`
 
 
 
-const ReactorTemplete = ({children}) =>
+const ReactorTemplete = () =>
 (
     <StyledDiv>
         <WeatherMenu ></WeatherMenu>

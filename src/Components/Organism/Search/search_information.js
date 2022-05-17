@@ -1,3 +1,4 @@
+import React  from 'react';
 import styled from 'styled-components'
 import {Formik, Form, Field} from 'formik'
 import SearchInput from '../../Atoms/Search/search_input'
@@ -6,17 +7,22 @@ const StyledForm = styled(Form)`
 
 
 width: 100% ;
+height: 45px ;
+background-color: transparent ;
+border: 5px solid rgb(0, 205, 209) ;
+border-radius: 20px ;
+position: relative;
 `
 
 const Search = () =>
 (
-    
-        <Formik  initialValues={{content: ''}} 
+  <>
+<Formik  initialValues={{content: ''}} 
         onSubmit={(values) =>{
           window.open(`https://pl.wikipedia.org/wiki/${values.content}`, "_blank")
         }}>
 
-            {({isSubmitting, values, handleChange, handleBlur}) =>
+            {({values, handleChange, handleBlur}) =>
             (
               <StyledForm>
               <SearchInput
@@ -32,8 +38,8 @@ const Search = () =>
             </StyledForm>  
             )}
       
-      </Formik >
-   
+    </Formik >
+    </>
 )
 
 export default Search

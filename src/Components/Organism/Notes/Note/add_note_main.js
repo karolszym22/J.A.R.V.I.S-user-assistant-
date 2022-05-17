@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import React from 'react';
 import Buttom  from '../../../Atoms/Notes/Note/add-note_button';
 import InputContent from '../../../Atoms/Notes/Note/add-note_input_2';
 import InputTittle from '../../../Atoms/Notes/Note/add-note_input';
@@ -30,7 +31,7 @@ const AddNotes = ({addNote}) =>
                 addNote(values)
             }}>
 
-                {({isSubmitting, values, handleChange, handleBlur}) =>
+                {({ values, handleChange, handleBlur}) =>
                 (
                   <StyledContainer>
                   <InputTittle

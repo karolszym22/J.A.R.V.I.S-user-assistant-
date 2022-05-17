@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Help from '../Help/help'
 import Notes from '../Notes/note'
 import Weather from '../Weather/weather'
-import Main from '../Main/main'
 import Reactor from '../Reactor/reactor'
 import { Provider } from 'react-redux';
 import store from '../../../store/index'

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import React from 'react'
 import NoteTitle from '../../../Atoms/Notes/Note/note_title'
 import NoteContent from '../../../Atoms/Notes/Note/note_content'
 import NoteContentContainer from '../../../Molecules/Notes/Note/note_container'
@@ -22,7 +23,6 @@ state = {
 
 render() {
   const {title, content, id, deleteNote} = this.props;
-  const {redirect} = this.state;
     return (
       <StyledDiv_3>
       <DeleteNote onClick={()=> deleteNote(id)}>delete</DeleteNote>
@@ -44,11 +44,12 @@ Note.protoTypes = {
    title: PropTypes.string.isRequired,
    content: PropTypes.string.isRequired,
    id: PropTypes.number.isRequired,
-   postType: PropTypes.string.isRequired,
+   delete: PropTypes.string.isRequired,
 }
 Note.defaultProps = {
 
     postType: 'posts',
+    title: '',
   }
 
 const mapDispatchToProps = dispatch => ({
