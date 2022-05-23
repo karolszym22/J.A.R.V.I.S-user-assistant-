@@ -19,7 +19,7 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "react/prop-types": "off"
-
+        "react/prop-types": "off",
+        "no-unused-vars": "off"
     }
 }
