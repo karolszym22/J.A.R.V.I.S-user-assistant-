@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {Formik, Form, Field} from 'formik'
 import SearchInput from '../../Atoms/Search/search_input'
 import Button from '../../Atoms/Notes/Note/add-note_button'
+import searchReactions from '../../../Reactions/Search/search_reactions';
 const StyledForm = styled(Form)`
 
 
@@ -19,10 +20,9 @@ const Search = () =>
   <>
 <Formik  initialValues={{content: ''}} 
         onSubmit={(values) =>{
-          window.open(`https://pl.wikipedia.org/wiki/${values.content}`, "_blank")
-        }}>
-
-            {({values, handleChange, handleBlur}) =>
+          window.responsiveVoice.speak(`${searchReactions[Math.floor(Math.random()*searchReactions.length)]} ${values.content}`,"Polish Male")
+          window.open(`https://pl.wikipedia.org/wiki/${values.content}`, "_blank")}}>
+          {({values, handleChange, handleBlur}) =>
             (
               <StyledForm>
               <SearchInput
