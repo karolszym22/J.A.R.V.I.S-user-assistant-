@@ -1,16 +1,6 @@
-const noteRemoveReactions = {
-    reactions: [
-    {
-        content: "Pomyślnie usunięto notatkę"
-    },
-    {
-        content: "Notatka została pomyślnie usunięta"
-    },
-    {
-        content: "Usuwam notatkę",
-        
-    },
-   
-    ]
+const noteRemoveReactions = ["Pomyślnie usunięto notatkę","Notatka została pomyślnie usunięta","Usuwam notatkę"]
     
-}
+
+
+
+export default noteRemoveReactions
