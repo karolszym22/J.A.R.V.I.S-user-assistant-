@@ -11,10 +11,11 @@ const StyledDiv = styled.div`
 `;
 
 const Menu = () =>
-(
+(   
     <StyledDiv>
+        
         <MenuContainer>
-              <MenuNav as={NavLink} to="/">Glowna</MenuNav>
+              <MenuNav as={NavLink} to="/">Interfejs</MenuNav>
               <MenuNav as={NavLink} to="/Szukaj">Wikipedia</MenuNav>
               <MenuNav as={NavLink} to="/Weather">Pogoda</MenuNav>
               <MenuNav as={NavLink} to="/Notes">Notatki</MenuNav>

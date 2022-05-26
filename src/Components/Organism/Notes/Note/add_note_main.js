@@ -23,11 +23,12 @@ flex-direction: column;
 `
 
 const AddNotes = ({addNote}) =>
-(
+(    
     <StyledDiv>
         <AddNoteContainer>
             <Formik initialValues={{title: '', content: ''}} 
             onSubmit={(values) =>{
+           
                 addNote(values)
             }}>
 
@@ -66,13 +67,11 @@ const AddNotes = ({addNote}) =>
     
 )
 
-AddNotes.propTypes = {
-    
-      
-}
+
 
 const mapDispatchToProps = dispatch => ({
     addNote: (noteContent) => dispatch(addNoteAction(noteContent))
+    
 })
 
 export default connect(null, mapDispatchToProps)(AddNotes);

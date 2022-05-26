@@ -37,19 +37,15 @@ render() {
 }
 }
 
-   
-
-
 Note.protoTypes = {
    title: PropTypes.string.isRequired,
    content: PropTypes.string.isRequired,
    id: PropTypes.number.isRequired,
-   delete: PropTypes.string.isRequired,
+   de: PropTypes.string.isRequired,
 }
 Note.defaultProps = {
 
     postType: 'posts',
-    title: '',
   }
 
 const mapDispatchToProps = dispatch => ({
