@@ -8,12 +8,14 @@ import Reactor from '../Reactor/reactor'
 import { Provider } from 'react-redux';
 import store from '../../../store/index'
 import Search from '../Search/Search'
+import SpeechProvider from '../../../context/speechContext';
 const Root = () =>
 ( 
 
 <Provider store={store}>
   <BrowserRouter>
-  <MainTemplate>
+  <SpeechProvider>
+   <MainTemplate>
   
      <Routes>
            <Route exact path='/' element= {<Reactor />}/>
@@ -23,7 +25,8 @@ const Root = () =>
            <Route  path='/Szukaj' element = {<Search/>}/>
      </Routes>
     
-  </MainTemplate>
+   </MainTemplate>
+  </SpeechProvider>
   </BrowserRouter>
 </Provider>
 )
