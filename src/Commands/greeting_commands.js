@@ -1,0 +1,1 @@
+const navComands = ['Witaj', 'Witam', 'Hej', 'Cześć', 'Siema', 'Hejo']
