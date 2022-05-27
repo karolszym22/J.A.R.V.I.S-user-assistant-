@@ -10,20 +10,10 @@ import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognitio
 
 const MainTemplate = ({children}) => {
 
-  const [speech, setSpeech] = React.useState('');    
-  const SpeechtoText = () => {
-    const { transcript,resetTranscript,  } = useSpeechRecognition();
-    useEffect(()=>{
-      SpeechRecognition.startListening({continuous:false})
-      setSpeech(transcript);
-    })
-    console.log(speech)
   
-  }
 
   return (
     <div>
-    {SpeechtoText()}
     <GlobalStyle/>
     <Main></Main>
     <ThemeProvider theme={theme}>
