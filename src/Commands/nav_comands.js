@@ -1,0 +1,1 @@
+const navComands = ['Notatki', 'Interfejs', 'Pomoc', 'Szukaj']
