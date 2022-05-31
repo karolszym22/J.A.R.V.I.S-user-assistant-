@@ -1,18 +1,20 @@
 const navComands = [
     {
-      comands: ["Powrót", "Przełącz na interfejs", "Wróć", "Interfejs"],  
-      link: "/Interfejs"
+      comands: ["powrót", "przełącz na interfejs", "wróć", "interfejs"],  
+      link: ""
     },
     {
-      comands: ["Dodaj notatkę", "Notatki", "Chciałbym dodać notatkę"],
-      link: "/Notes"
+      comands: ["dodaj notatkę", "notatki", "chciałbym dodać notatkę"],
+      link: "notes"
     },
     {
-      comands: ["Szukaj", "Poszukaj informacji", "Chcę czegoś poszukać"],  
-      link: "/Szukaj"
+      comands: ["szukaj", "poszukaj informacji", "chcę czegoś poszukać"],  
+      link: "szukaj"
     },
     {
-      comands: ["Pomoc", "Pomóż mi", "Potrzebuję pomocy"],
-      link: "/Pomoc"
+      comands: ["pomoc", "pomóż mi", "potrzebuję pomocy"],
+      link: "pomoc"
     }
 ]
+
+export default navComands
