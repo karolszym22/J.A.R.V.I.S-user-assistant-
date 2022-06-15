@@ -57,10 +57,6 @@ React.useEffect(() => {
   
 }, [latitude, longitude])
 
- const GreetingLocation = (...args) =>
- {
-      const {name, temp} = args;
- }
 
   return (
     
