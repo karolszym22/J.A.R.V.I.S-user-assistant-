@@ -8,16 +8,17 @@ import Reactor from '../Reactor/reactor'
 import { Provider } from 'react-redux';
 import store from '../../../store/index'
 import Search from '../Search/Search'
-import SpeechProvider ,{ SpeechContext } from '../../../context/speechContext';
+import SpeechProvider  from '../../../context/SpeechContext';
 const Root = () =>
 {
 
 
 
   return(<Provider store={store}>
-    <BrowserRouter>
+  <BrowserRouter>
+    <SpeechProvider>
      <MainTemplate>
-   <Routes>
+       <Routes>
              <Route exact path='/' element= {<Reactor />}/>
              <Route  path='/notes' element = {<Notes/>}/>
              <Route  path='/weather' element = {<Weather/>}/>
@@ -25,7 +26,8 @@ const Root = () =>
              <Route  path='/szukaj' element = {<Search/>}/>
        </Routes>
       </MainTemplate>
-     </BrowserRouter>
+    </SpeechProvider>
+   </BrowserRouter>
  
   </Provider>)
 
