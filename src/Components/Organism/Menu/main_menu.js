@@ -5,7 +5,8 @@ import MenuNav from '../../Atoms/Menu/menu_nav'
 import {NavLink, useNavigate} from 'react-router-dom';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import navComands from '../../../Commands/nav_comands';
-import { SpeechContext } from '../../../context/speechContext'; 
+import { SpeechContext } from '../../../context/SpeechContext'; 
+
 const StyledDiv = styled.div`
     width: 100%;
     display: flex;
@@ -14,17 +15,16 @@ const StyledDiv = styled.div`
 
 const Menu = () =>
 {
+  const speech = useContext(SpeechContext) ;
   const navigate = useNavigate();
-  const [speech, setSpeech] = React.useState('');    
-      const { transcript } = useSpeechRecognition();
+
       useEffect(()=>{
-        SpeechRecognition.startListening({continuous:false})
         navComands.forEach((e) => {
-         if(e.comands.includes(transcript.toLowerCase()))
+         if(e.comands.includes(speech.toLowerCase()))
              navigate(e.link)
 
-        })
-        console.log(transcript.toLowerCase())
+        }, [])
+        
       })
 
        
