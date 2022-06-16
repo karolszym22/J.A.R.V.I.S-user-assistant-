@@ -5,7 +5,7 @@ import InputContent from '../../../Atoms/Notes/Note/add-note_input_2';
 import InputTittle from '../../../Atoms/Notes/Note/add-note_input';
 import AddNoteContainer from '../../../Molecules/Notes/Note/add-note_container'
 import { connect } from 'react-redux';
-import { addNote as addNoteAction } from '../../../../actions';
+import { addNote as addNoteAction } from '../../../../actions/handle_note_actions';
 import {Formik, Form, Field} from 'formik'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 import {titleCommands, contentCommands} from '../../../../Commands/note_commands';
@@ -27,26 +27,12 @@ flex-direction: column;
 const AddNotes = ({addNote}) =>
 {   
     
-    const [voiceTitle, setTitle] = React.useState('sdsds')
-    const [voiceContent, setContent] = React.useState('')
-    const { transcript } = useSpeechRecognition();
-
-    useEffect(()=>{
-        SpeechRecognition.startListening({continuous:false})
-        
-                setTitle(transcript)
-                console.log(voiceTitle)
-        
-        
-
-
-    })
+   
     return(
         <StyledDiv>
         <AddNoteContainer>
-            <Formik initialValues={{title: voiceTitle, content: voiceContent}} 
+            <Formik initialValues={{title: '', content: ''}} 
             onSubmit={(values) =>{
-                console.log(voiceTitle)
                 addNote(values)
             }}>
 
