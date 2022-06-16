@@ -4,7 +4,7 @@ const navComands = [
       link: ""
     },
     {
-      comands: ["dodaj notatkę", "notatki", "chciałbym dodać notatkę"],
+      comands: ["notatki", "chciałbym dodać notatkę"],
       link: "notes"
     },
     {
