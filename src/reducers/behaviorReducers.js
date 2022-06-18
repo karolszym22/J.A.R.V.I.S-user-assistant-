@@ -1,5 +1,4 @@
-import noteAddReactions from "../Reactions/Note/note_add_reactions";
-import noteRemoveReactions from "../Reactions/Note/note_remove_reactions";
+
 
 
 const initialState = {
@@ -10,12 +9,13 @@ const initialState = {
 
 const behaviorReducer = (state = initialState, action) => {
     
-
-
     switch(action.type)
     {
-       case('BEHAVIOR_UPDATE'): 
-            
+       case('BEHAVIOR_UPDATE'):
+          return{
+            ...state, behavior: action.payload.behavior
+          }
+          default: return state
     }
     
 }
