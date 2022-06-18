@@ -1,6 +1,6 @@
 export const updateBehavior = (behavior) => {
     return {
-        type: "DELETE_NOTE",
+        type: "BEHAVIOR_UPDATE",
         payload:  {
             behavior,
         }
