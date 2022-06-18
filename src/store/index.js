@@ -1,6 +1,10 @@
-import { createStore } from "redux";
-import notesApp from '../reducers/noteReducers'
+import {configureStore} from '@reduxjs/toolkit';
+import reducers from '../reducers/index'
 
-const store = createStore(notesApp);
-
+const store = configureStore(
+    {
+        reducer:reducers
+    },
+)
+;
 export default store;
