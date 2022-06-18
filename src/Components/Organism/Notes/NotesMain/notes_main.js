@@ -53,7 +53,7 @@ const NotesMenu = ({notes}) =>
 
 
 const mapStateToProps = state => {
-    const {notes} = state;
+    const {notes} = state.note;
     return {notes};
 }
 
