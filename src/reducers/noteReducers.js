@@ -1,4 +1,3 @@
-import note from "../Components/Views/Notes/note";
 import noteAddReactions from "../Reactions/Note/note_add_reactions";
 import noteRemoveReactions from "../Reactions/Note/note_remove_reactions";
 
@@ -33,13 +32,13 @@ const noteReducer = (state = initialState, action) => {
     switch(action.type)
     {
         case ('DELETE_NOTE'):
-            window.responsiveVoice.speak(noteRemoveReactions[Math.floor(Math.random()*noteRemoveReactions.length)],"Polish Male")
+            window.responsiveVoice.speak(noteAddReactions[Math.floor(Math.random()*noteAddReactions.length)],"Polish Male")
             return {
                 ...state, 
                     notes: state.notes.filter((item) => item.id !== action.payload.id) 
                 };
          case ('ADD_NOTE'):
-             window.responsiveVoice.speak(noteAddReactions[Math.floor(Math.random()*noteAddReactions.length)],"Polish Male")
+            window.responsiveVoice.speak(noteAddReactions[Math.floor(Math.random()*noteAddReactions.length)],"Polish Male")
               return {...state, notes: [...state.notes, action.payload.note]}
             
             default: return state

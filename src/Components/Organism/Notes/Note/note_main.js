@@ -6,7 +6,7 @@ import NoteContentContainer from '../../../Molecules/Notes/Note/note_container'
 import PropTypes from 'prop-types';
 import DeleteNote from '../../../Atoms/Notes/Assets/delete_note'
 import { connect} from 'react-redux';
-import { deleteNote as deleteNoteAction } from '../../../../actions'
+import { deleteNote as deleteNoteAction } from '../../../../actions/handle_note_actions'
 import { Component } from 'react';
 
 const StyledDiv_3 = styled.div`
@@ -24,15 +24,13 @@ state = {
 render() {
   const {title, content, id, deleteNote} = this.props;
     return (
-      <StyledDiv_3>
+    <StyledDiv_3>
       <DeleteNote onClick={()=> deleteNote(id)}>delete</DeleteNote>
         <NoteTitle>{title}</NoteTitle>
             <NoteContentContainer>
                 <NoteContent>{content}</NoteContent>
             </NoteContentContainer>
-            
-        
-  </StyledDiv_3>
+    </StyledDiv_3>
     )
 }
 }

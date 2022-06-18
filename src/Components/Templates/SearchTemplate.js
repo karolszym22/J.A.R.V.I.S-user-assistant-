@@ -22,10 +22,9 @@ const StyledDiv_2 = styled.div`
 const SearchTemplete = () =>
 (
     <StyledDiv>
-      
-        <SearchTitle>Wikipedia</SearchTitle>
+      <SearchTitle>Wikipedia</SearchTitle>
         <StyledDiv_2>
-        <SearchInformation></SearchInformation>
+           <SearchInformation></SearchInformation>
        </StyledDiv_2> 
     </StyledDiv>
   

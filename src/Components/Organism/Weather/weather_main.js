@@ -24,7 +24,7 @@ const opacity = keyframes`
 `;
 
 const StyledDiv = styled.div`
-  width: 240px; height: 400px; position: absolute; top: 10%; right: 7.5%; 
+  width: 240px; height: 400px; position: absolute; top: 10%; right: 0.5%; 
   display: flex; flex-direction: column;
   animation: ${opacity} 2s ease-out;
   animation-fill-mode: forwards;
