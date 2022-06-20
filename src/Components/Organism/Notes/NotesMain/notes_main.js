@@ -33,14 +33,13 @@ const StyledDiv = styled.div`
 const NotesMenu = ({notes}) =>
 (
  <StyledDiv>
-     <NotesElementOne></NotesElementOne>
-     <NotesElementTwo></NotesElementTwo>
+  <NotesElementOne></NotesElementOne>
+    <NotesElementTwo></NotesElementTwo>
      <NotesContainer>
      {notes.map(({content, id}) =>(
         <NotesData
         content={content}
         key = {id}
-        
         />
      ))}
      </NotesContainer>
