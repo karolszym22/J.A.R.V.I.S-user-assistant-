@@ -7,8 +7,7 @@ import AddNoteContainer from '../../../Molecules/Notes/Note/add-note_container'
 import { connect } from 'react-redux';
 import { addNote as addNoteAction } from '../../../../actions/handle_note_actions';
 import {Formik, Form, Field} from 'formik'
-import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
-import {titleCommands, contentCommands} from '../../../../Commands/note_commands';
+
 
 const StyledDiv = styled.div`
     width: 90%;
