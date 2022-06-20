@@ -1,6 +1,5 @@
-import noteAddReactions from "../Reactions/Note/note_add_reactions";
-import noteRemoveReactions from "../Reactions/Note/note_remove_reactions";
-
+import noteAddInformation from "../Functions/JarvisRemarks/note_add_remarks";
+import noteRemoveInformation from "../Functions/JarvisRemarks/note_remove_remarks";
 
 const initialState = {
     notes: [
@@ -32,13 +31,13 @@ const noteReducer = (state = initialState, action) => {
     switch(action.type)
     {
         case ('DELETE_NOTE'):
-            window.responsiveVoice.speak(noteAddReactions[Math.floor(Math.random()*noteAddReactions.length)],"Polish Male")
+            noteRemoveInformation()
             return {
                 ...state, 
                     notes: state.notes.filter((item) => item.id !== action.payload.id) 
                 };
          case ('ADD_NOTE'):
-            window.responsiveVoice.speak(noteAddReactions[Math.floor(Math.random()*noteAddReactions.length)],"Polish Male")
+            noteAddInformation()
               return {...state, notes: [...state.notes, action.payload.note]}
             
             default: return state
