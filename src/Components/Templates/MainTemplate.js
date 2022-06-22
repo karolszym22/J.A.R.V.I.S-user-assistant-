@@ -17,13 +17,16 @@ const MainTemplate = ({children, updateBehavior}) => {
   console.log(speech)
       const setBehavior = () => {
         setMainState(commands_interactions(speech))
-        state!== undefined ? updateBehavior(state) : console.log("niestety") 
+        if(state?.length > 0)
+        {
+          updateBehavior(state)
+        }
       }
 
       useEffect(() =>
       {
         setBehavior()
-      },[state])
+      })
  
   return (
     <div>

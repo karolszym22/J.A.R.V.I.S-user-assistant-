@@ -17,7 +17,6 @@ const Menu = () =>
 {
   const speech = useContext(SpeechContext) ;
   const navigate = useNavigate();
-
       useEffect(()=>{
         navComands.forEach((e) => {
          if(e.comands.includes(speech.toLowerCase()))
