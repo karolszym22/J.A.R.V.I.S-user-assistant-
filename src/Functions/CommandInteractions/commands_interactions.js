@@ -1,9 +1,12 @@
 import React, {useState} from "react";
-import addNoteInteractions from "./Interactions/addNoteInteractions"
+import { isNote } from "../IncludeCommends/is_note_commands";
+
 
 const commands_interactions = (speech) => 
 { 
-    return addNoteInteractions(speech); 
+    let currentInteraction = ''
+    currentInteraction = isNote(speech)
+    return currentInteraction;
 }
 
 export default commands_interactions
