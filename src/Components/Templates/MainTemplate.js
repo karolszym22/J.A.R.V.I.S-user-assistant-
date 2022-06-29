@@ -15,11 +15,9 @@ const MainTemplate = ({children, updateBehavior}) => {
 
   const [state, setMainState] = useState('')
   const speech = useContext(SpeechContext) 
-  console.log(speech)
-
+  
       const setBehavior = () => {
         setMainState(commands_interactions(speech))
-        
       }
       
        useEffect(() =>
@@ -64,10 +62,7 @@ const mapDispatchToProps = dispatch => ({
    
  })
 
- const mapStateToProps = state => {
-  const {behavior} = state.behavior;
-  return {behavior};
-}
+
  
  
  export default connect(null, mapDispatchToProps )(MainTemplate);
