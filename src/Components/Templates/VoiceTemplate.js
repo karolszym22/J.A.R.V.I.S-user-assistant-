@@ -1,7 +1,7 @@
 import React, {useEffect, useContext, useState} from 'react';
 import { SpeechContext } from "../../context/SpeechContext";
 import { connect } from 'react-redux/es/exports';
-
+import add_note_interction from '../../Functions/CommandInteractions/Interactions/add_note_interaction';
 
 const VoiceTemplate = ({behavior}) => {
 
@@ -12,12 +12,11 @@ const VoiceTemplate = ({behavior}) => {
     useEffect(() =>
     {
         setCurrentSpeech(speech)
-        console.log("moj behavior", behavior)
-        console.log(currentSpeech, currentState)
+        setCurrentState(behavior)
         if(currentState === 'addNote')
         {
-            Speech(currentSpeech)
-            console.log(currentState)
+            add_note_interction(currentSpeech)
+            
         }
         
     })
@@ -36,4 +35,4 @@ const mapStateToProps = state => {
   }
 
 
-  export default connect(null, mapStateToProps)(VoiceTemplate);
+  export default connect(mapStateToProps)(VoiceTemplate);
