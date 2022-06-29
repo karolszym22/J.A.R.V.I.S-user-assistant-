@@ -1,25 +1,39 @@
-import React, {useEffect,useState} from 'react';
-import noteAddReactions from '../../Reactions/Note/note_add_reactions';
-const VoiceTemplate = ({state}) => {
+import React, {useEffect, useContext, useState} from 'react';
+import { SpeechContext } from "../../context/SpeechContext";
+import { connect } from 'react-redux/es/exports';
 
-    const currentState = state
 
+const VoiceTemplate = ({behavior}) => {
+
+    const speech = useContext(SpeechContext) 
+    const [currentSpeech, setCurrentSpeech] = useState('')
+    const [currentState, setCurrentState] = useState('')
+  
     useEffect(() =>
     {
-        switch (currentState) {
-            case 'addNote':
-                noteAddReactions()
-              break;
-            default: 
-              
-            
-          }
+        setCurrentSpeech(speech)
+        console.log("moj behavior", behavior)
+        console.log(currentSpeech, currentState)
+        if(currentState === 'addNote')
+        {
+            Speech(currentSpeech)
+            console.log(currentState)
+        }
+        
     })
-
+    const Speech = (speech) =>{
+        console.log(speech)
+    }
     return (
         <>
         </>
     )
 }
 
-export default VoiceTemplate
+const mapStateToProps = state => {
+    const {behavior} = state.behavior;
+    return {behavior};
+  }
+
+
+  export default connect(null, mapStateToProps)(VoiceTemplate);
