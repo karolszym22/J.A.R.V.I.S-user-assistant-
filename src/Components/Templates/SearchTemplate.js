@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import SearchInformation from  '../Organism/Search/search_information'
 import SearchTitle from '../Atoms/Notes/notes_title'
 
-const StyledDiv = styled.div`
+const SearchContainer = styled.div`
   width: 100%;  display: flex; flex-direction: column; 
   align-items: center; color: rgb(80, 208, 228);
   height: 300px;
   `;
-const StyledDiv_2 = styled.div`
+const SearchForm = styled.div`
   width: 50%;  display: flex; flex-direction: column; 
   align-items: center; color: rgb(80, 208, 228);
   height: 45px ;
@@ -21,12 +21,12 @@ const StyledDiv_2 = styled.div`
 
 const SearchTemplete = () =>
 (
-    <StyledDiv>
+    <SearchContainer>
       <SearchTitle>Wikipedia</SearchTitle>
-        <StyledDiv_2>
+        <SearchForm>
            <SearchInformation></SearchInformation>
-       </StyledDiv_2> 
-    </StyledDiv>
+       </SearchForm> 
+    </SearchContainer>
   
     
 )
