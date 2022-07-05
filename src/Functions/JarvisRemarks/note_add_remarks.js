@@ -1,4 +1,4 @@
-import noteAddReactions from "../../Reactions/Note/note_add_reactions"
+import noteAddReactions from "../../Reactions/Note/add_reactions"
 
 const noteAddRemark = () => window.responsiveVoice.speak(noteAddReactions [Math.floor(Math.random()*noteAddReactions .length)],"Polish Male")
 

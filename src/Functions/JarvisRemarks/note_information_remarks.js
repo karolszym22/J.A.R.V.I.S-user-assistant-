@@ -1,5 +1,5 @@
-import noteInformationsReactions from "../../Reactions/Note/note_informations_reaction"
+import addInformationsReactions from "../../Reactions/Note/add_informations_reaction"
 
-const noteInformation = () => window.responsiveVoice.speak(noteInformationsReactions[Math.floor(Math.random()*noteInformationsReactions.length)],"Polish Male")
+const addNoteInformation = () => window.responsiveVoice.speak(addInformationsReactions[Math.floor(Math.random()*addInformationsReactions.length)],"Polish Male")
 
-export default noteInformation 
+export default addNoteInformation
