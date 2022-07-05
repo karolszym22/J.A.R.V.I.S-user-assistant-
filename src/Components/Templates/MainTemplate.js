@@ -16,9 +16,6 @@ const MainTemplate = ({children, updateBehavior}) => {
   const [state, setMainState] = useState('')
   const speech = useContext(SpeechContext) 
   
-      const setBehavior = () => {
-        setMainState(commands_interactions(speech))
-      }
       
        useEffect(() =>
       {
@@ -34,10 +31,14 @@ const MainTemplate = ({children, updateBehavior}) => {
       {
         setBehavior()
         const setDefault = setTimeout(() => {
-            updateBehavior('xxxxxxx')
+            updateBehavior('default')
         }, 8000);
            return () => clearTimeout(setDefault);
       })
+
+      const setBehavior = () => {
+        setMainState(commands_interactions(speech))
+      }
       
  
   return (
