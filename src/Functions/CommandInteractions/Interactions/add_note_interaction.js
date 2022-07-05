@@ -2,11 +2,11 @@
 import {useEffect, useState} from "react"
 
 
-const add_note_interction = (values) =>
+const addNoteInterction = (values) =>
 {
  let title = '' 
  let description = ''
- 
+
 }
 
-export default add_note_interction;
+export default addNoteInterction;
