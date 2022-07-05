@@ -1,4 +1,9 @@
-const noteRemoveReactions = ["Pomyślnie usunięto notatkę","Notatka została pomyślnie usunięta","Usuwam notatkę"]
+const noteRemoveReactions =
+ [
+    "Pomyślnie usunięto notatkę",
+    "Notatka została pomyślnie usunięta",
+    "Usuwam notatkę"
+ ]
     
 
 
