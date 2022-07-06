@@ -1,15 +1,15 @@
 
-const add_note_validation = (...args) =>
+const addNoteValidation = (...args) =>
 {
   let is_title = false;
   let is_description = false  
-  const VALUE_lENGTH = 0;  
+  const EMPTY_VALUE = 0;  
 
   const {title,description, setNoteValues} = args
 
-      title?.length > VALUE_lENGTH ? is_title = true : is_title = false
-      description?.length > VALUE_lENGTH ? is_description = true : is_description = false
-        is_title === true && is_description ===true ? setNoteValues(true) : setNoteValues(false)
+      title?.length >EMPTY_VALUE ? is_title = true : is_title = false
+      description?.length >EMPTY_VALUE ? is_description = true : is_description = false
+        is_title && is_description ===true ? setNoteValues(true) : setNoteValues(false)
 }
 
-export default add_note_validation()
+export default addNoteValidation()
