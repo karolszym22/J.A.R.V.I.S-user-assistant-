@@ -4,7 +4,7 @@ import { titleCommands, contentCommands } from "../../../Commands/note_commands"
 let title = '' 
 let description = ''
 
-const addNoteInterction = (...args) =>
+const setNoteValues = (...args) =>
 {
  
   const [values, setTitle, setDescription] = args
@@ -35,4 +35,4 @@ const addNoteInterction = (...args) =>
 }
 
 
-export default addNoteInterction;
+export default setNoteValues;
