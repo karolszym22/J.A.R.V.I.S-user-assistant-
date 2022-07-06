@@ -1,12 +1,13 @@
-import noteInformation from "../JarvisRemarks/note_information_remarks";
+import addNoteInformation from "../JarvisRemarks/note_information_remarks";
+import removeNoteInformations from "../../Reactions/Note/remove_informations_reaction";
 
 const behaviorSubscribe = (behavior) =>{
     switch (behavior) {
         case 'addNote':
-          noteInformation()
+          addNoteInformation()
         break;
         case 'deleteNote':
-          window.responsiveVoice.speak(("Podaj tytuł notatki którą chcesz usunąc"),"Polish Male")
+          removeNoteInformations()
         break
           default: 
           
