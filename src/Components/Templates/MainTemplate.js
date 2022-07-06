@@ -16,10 +16,11 @@ const MainTemplate = ({children, updateBehavior}) => {
   const [state, setMainState] = useState('')
   const speech = useContext(SpeechContext) 
   
+  const EMPTY_STATE = 0
       
        useEffect(() =>
       {
-        if(state?.length > 0)
+        if(state?.length > EMPTY_STATE)
         {
           updateBehavior(state)
           behaviorSubscribe(state)
