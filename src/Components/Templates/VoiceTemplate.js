@@ -2,10 +2,11 @@ import React, {useEffect, useContext, useState} from 'react';
 import { SpeechContext } from "../../context/SpeechContext";
 import { connect } from 'react-redux/es/exports';
 import getNoteValues from '../../Functions/CommandInteractions/Interactions/set_note_values';
-import { addNote as addNoteAction } from '../../actions/handle_note_actions'
+import {addNoteByVoice as addNoteByVoiceAction } from '../../actions/handle_note_actions'
 import addNoteValidation from '../../Functions/CommandInteractions/Interactions/Validations/Note/add_note_validation';
 
-const VoiceTemplate = ({behavior}) => {
+
+const VoiceTemplate = ({behavior,addNoteByVoice}) => {
 
     const speech = useContext(SpeechContext) 
     const [currentSpeech, setCurrentSpeech] = useState('')
@@ -15,7 +16,7 @@ const VoiceTemplate = ({behavior}) => {
     const [description, setDescription] = useState('')
 
     const [noteValues, setNoteValues] = useState(false)
-    const [noteTitle, setNoteTitle] = useState(false)
+    //const [noteTitle, setNoteTitle] = useState(false)
     
 
     useEffect(() =>
@@ -26,8 +27,7 @@ const VoiceTemplate = ({behavior}) => {
         switch(currentState) {
             case 'addNote':
               { 
-                getNoteValues(currentSpeech, setTitle, setDescription)
-                addNoteValidation(title,description, setNoteValues)
+                sendNote()
               }
             break;
             case 'deleteNote':
@@ -37,6 +37,21 @@ const VoiceTemplate = ({behavior}) => {
               // code block
           }
        })
+
+
+
+       const sendNote = () =>
+       {
+         getNoteValues(currentSpeech, setTitle, setDescription)
+         addNoteValidation(title,description, setNoteValues)
+           if(noteValues === true)
+           {
+             addNoteByVoice(title,description)
+             setTitle('')
+             setDescription('')
+           }
+        
+       }
 
     return (
         <>
@@ -51,7 +66,7 @@ const mapStateToProps = state => {
 
   const mapDispatchToProps = dispatch => ({
     
-    addNote: (noteContent) => dispatch(addNoteAction(noteContent))
+    addNoteByVoice: (title,description) => dispatch(addNoteByVoiceAction(title,description))
     
 })
 
