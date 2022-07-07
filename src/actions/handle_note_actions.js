@@ -22,3 +22,18 @@ export const addNote = (noteContent) =>
     }
 }
 
+export const addNoteByVoice = (title, description) =>
+{
+    const idGenerator = () =>
+    `_${Math.random().toString(36).substr(2,9)}`
+    return {
+        type: "ADD_NOTE_BY_VOICE",
+        payload: {
+            note: {
+                id: idGenerator(),
+                title,
+                description,
+            }
+        }
+    }  
+}
