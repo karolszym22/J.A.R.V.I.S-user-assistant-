@@ -38,7 +38,11 @@ const noteReducer = (state = initialState, action) => {
                 };
          case ('ADD_NOTE'):
             noteAddInformation()
-              return {...state, notes: [...state.notes, action.payload.note]}
+              return {...state, notes: [...state.notes, action.payload.note]};
+         case ('ADD_NOTE_BY_VOICE'):
+            
+            noteAddInformation()
+                  return {...state, notes: [...state.notes, action.payload.note]};
             
             default: return state
             
