@@ -1,5 +1,5 @@
 import addNoteInformation from "../JarvisRemarks/note_information_remarks";
-import removeNoteInformations from "../../Reactions/Note/remove_informations_reaction";
+import noteRemoveRemark from "../JarvisRemarks/note_remove_remarks"
 
 const behaviorSubscribe = (behavior) =>{
     switch (behavior) {
@@ -7,7 +7,7 @@ const behaviorSubscribe = (behavior) =>{
           addNoteInformation()
         break;
         case 'deleteNote':
-          removeNoteInformations()
+          noteRemoveRemark()
         break
           default: 
           
