@@ -36,6 +36,12 @@ const noteReducer = (state = initialState, action) => {
                 ...state, 
                     notes: state.notes.filter((item) => item.id !== action.payload.id) 
                 };
+        case ('DELETE_NOTE_BY_VOICE'):
+            noteRemoveInformation()
+                    return {
+                 ...state, 
+                     notes: state.notes.filter((item) => item.id !== action.payload.title) 
+                        };
          case ('ADD_NOTE'):
             noteAddInformation()
               return {...state, notes: [...state.notes, action.payload.note]};
