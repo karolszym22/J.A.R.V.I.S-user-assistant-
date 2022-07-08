@@ -4,7 +4,7 @@ import { connect } from 'react-redux/es/exports';
 import getNoteValues from '../../Functions/CommandInteractions/Interactions/set_note_values';
 import {addNoteByVoice as addNoteByVoiceAction } from '../../actions/handle_note_actions'
 import addNoteValidation from '../../Functions/CommandInteractions/Interactions/Validations/Note/add_note_validation';
-
+import deleteNoteValidation from '../../Functions/CommandInteractions/Interactions/Validations/Note/delete_note_validation';
 
 const VoiceTemplate = ({behavior,addNoteByVoice}) => {
 
@@ -16,7 +16,7 @@ const VoiceTemplate = ({behavior,addNoteByVoice}) => {
     const [description, setDescription] = useState('')
 
     const [noteValues, setNoteValues] = useState(false)
-    //const [noteTitle, setNoteTitle] = useState(false)
+    const [noteTitle, setNoteTitle] = useState(false)
     
 
     useEffect(() =>
@@ -51,6 +51,10 @@ const VoiceTemplate = ({behavior,addNoteByVoice}) => {
              setDescription('')
            }
         
+       }
+       const deleteNote = () =>
+       {
+        deleteNoteValidation(title,setNoteTitle)
        }
 
     return (
