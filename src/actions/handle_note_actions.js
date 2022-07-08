@@ -22,7 +22,7 @@ export const addNote = (noteContent) =>
     }
 }
 
-export const addNoteByVoice = (title, description) =>
+export const addNoteByVoice = (title, content) =>
 {
     const idGenerator = () =>
     `_${Math.random().toString(36).substr(2,9)}`
@@ -32,7 +32,7 @@ export const addNoteByVoice = (title, description) =>
             note: {
                 id: idGenerator(),
                 title,
-                description,
+                content,
             }
         }
     }  
