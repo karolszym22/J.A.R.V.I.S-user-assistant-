@@ -27,7 +27,7 @@ const VoiceTemplate = ({behavior,addNoteByVoice}) => {
         switch(currentState) {
             case 'addNote': sendNote()
               break;
-            case 'deleteNote':
+            case 'deleteNote': deleteNote()
               // code block
               break;
             default:
@@ -51,10 +51,8 @@ const VoiceTemplate = ({behavior,addNoteByVoice}) => {
         
        }
 
-       const deleteNote = () =>
-       {
-        deleteNoteValidation(title,setNoteTitle)
-       }
+       const deleteNote = () => deleteNoteValidation(title,setNoteTitle)
+       
 
     return (
         <>
