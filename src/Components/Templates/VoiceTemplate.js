@@ -8,6 +8,8 @@ import deleteNoteValidation from '../../Functions/CommandInteractions/Interactio
 
 const VoiceTemplate = ({behavior,addNoteByVoice}) => {
 
+    const SPEECH_LENGTH = 0;
+
     const speech = useContext(SpeechContext) 
     const [currentSpeech, setCurrentSpeech] = useState('')
     const [currentState, setCurrentState] = useState('')
@@ -42,7 +44,7 @@ const VoiceTemplate = ({behavior,addNoteByVoice}) => {
        {
          getNoteValues(currentSpeech, setTitle, setDescription)
          addNoteValidation(title,description, setNoteValues)
-           if(noteValues === true && speech === '') 
+           if(noteValues === true && speech.length === SPEECH_LENGTH ) 
            {
              addNoteByVoice(title,description)
               setTitle('')
