@@ -22,6 +22,16 @@ export const addNote = (noteContent) =>
     }
 }
 
+export const deleteNoteByVoice = (title) => {
+    return {
+        type: "DELETE_NOTE",
+        payload:  {
+            title,
+        }
+        
+    }
+}
+
 export const addNoteByVoice = (title, content) =>
 {
     const idGenerator = () =>
