@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, createContext } from "react";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition'
 
-export const SpeechContext = React.createContext();
+export const SpeechContext = createContext();
 
 const SpeechProvider = ({ children }) => {
-    const [speech, setSpeech] = React.useState('');    
+    const [speech, setSpeech] = useState('');    
       const { transcript } = useSpeechRecognition();
       useEffect(()=>{
         SpeechRecognition.startListening({continuous:false})
