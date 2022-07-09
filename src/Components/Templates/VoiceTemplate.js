@@ -11,10 +11,8 @@ const VoiceTemplate = ({behavior,addNoteByVoice}) => {
     const speech = useContext(SpeechContext) 
     const [currentSpeech, setCurrentSpeech] = useState('')
     const [currentState, setCurrentState] = useState('')
-
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-
     const [noteValues, setNoteValues] = useState(false)
     const [noteTitle, setNoteTitle] = useState(false)
     
@@ -44,14 +42,16 @@ const VoiceTemplate = ({behavior,addNoteByVoice}) => {
        {
          getNoteValues(currentSpeech, setTitle, setDescription)
          addNoteValidation(title,description, setNoteValues)
-           if(noteValues === true)
+           if(noteValues === true && speech === '') 
            {
              addNoteByVoice(title,description)
-             setTitle('')
-             setDescription('')
+              setTitle('')
+              setDescription('')
+              setNoteValues(false)
            }
         
        }
+
        const deleteNote = () =>
        {
         deleteNoteValidation(title,setNoteTitle)
