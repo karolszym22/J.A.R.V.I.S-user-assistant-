@@ -25,11 +25,8 @@ const VoiceTemplate = ({behavior,addNoteByVoice}) => {
         setCurrentState(behavior)
 
         switch(currentState) {
-            case 'addNote':
-              { 
-                sendNote()
-              }
-            break;
+            case 'addNote': sendNote()
+              break;
             case 'deleteNote':
               // code block
               break;
