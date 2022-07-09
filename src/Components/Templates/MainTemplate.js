@@ -20,6 +20,7 @@ const MainTemplate = ({children, updateBehavior}) => {
       
        useEffect(() =>
       {
+        
         if(state?.length > EMPTY_STATE)
         {
           updateBehavior(state)
@@ -30,6 +31,7 @@ const MainTemplate = ({children, updateBehavior}) => {
 
       useEffect(() =>
       {
+        console.log(speech)
         setBehavior()
         const setDefault = setTimeout(() => {
             updateBehavior('default')
