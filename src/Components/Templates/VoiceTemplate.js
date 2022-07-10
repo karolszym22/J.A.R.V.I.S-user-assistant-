@@ -6,11 +6,12 @@ import {addNoteByVoice as addNoteByVoiceAction } from '../../actions/handle_note
 import addNoteValidation from '../../Functions/CommandInteractions/Interactions/Validations/Note/add_note_validation';
 import deleteNoteValidation from '../../Functions/CommandInteractions/Interactions/Validations/Note/delete_note_validation';
 
-const VoiceTemplate = ({behavior,addNoteByVoice}) => {
+const VoiceTemplate = ({behavior, addNoteByVoice}) => {
 
     const SPEECH_LENGTH = 0;
 
     const speech = useContext(SpeechContext) 
+
     const [currentSpeech, setCurrentSpeech] = useState('')
     const [currentState, setCurrentState] = useState('')
     const [title, setTitle] = useState('')
@@ -25,25 +26,30 @@ const VoiceTemplate = ({behavior,addNoteByVoice}) => {
         setCurrentState(behavior)
 
         switch(currentState) {
+            case 'greetings': sendNote()
+              break;
             case 'addNote': sendNote()
               break;
             case 'deleteNote': deleteNote()
-              // code block
               break;
             default:
               // code block
           }
        })
-
+       
+       const sendGreetings = () =>
+       {
+        
+       }
 
 
        const sendNote = () =>
        {
          getNoteValues(currentSpeech, setTitle, setDescription)
-         addNoteValidation(title,description, setNoteValues)
+         addNoteValidation(title, description, setNoteValues)
            if(noteValues === true && speech.length === SPEECH_LENGTH ) 
            {
-             addNoteByVoice(title,description)
+             addNoteByVoice(title, description)
               setTitle('')
               setDescription('')
               setNoteValues(false)
@@ -51,7 +57,11 @@ const VoiceTemplate = ({behavior,addNoteByVoice}) => {
         
        }
 
-       const deleteNote = () => deleteNoteValidation(title,setNoteTitle)
+       const deleteNote = () =>
+       {
+        deleteNoteValidation(title, setNoteTitle)
+       }
+      
        
 
     return (
@@ -62,13 +72,13 @@ const VoiceTemplate = ({behavior,addNoteByVoice}) => {
 
 const mapStateToProps = state => {
     const {behavior} = state.behavior;
-    return {behavior};
+      return {behavior};
   }
 
   const mapDispatchToProps = dispatch => ({
     
-    addNoteByVoice: (title,description) => dispatch(addNoteByVoiceAction(title,description))
+    addNoteByVoice: (title,description) => dispatch(addNoteByVoiceAction(title, description))
     
 })
 
-  export default connect(mapStateToProps,mapDispatchToProps)(VoiceTemplate);
+  export default connect(mapStateToProps, mapDispatchToProps)(VoiceTemplate);
