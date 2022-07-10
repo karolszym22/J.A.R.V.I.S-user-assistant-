@@ -1,38 +1,16 @@
-
-import { titleCommands, contentCommands } from "../../../Commands/note_commands";
-
-let title = '' 
-let description = ''
+import cutTitle from "./Helpers/cut_title"
+import cutDescription from "./Helpers/cut_description"
 
 const setNoteValues = (...args) =>
 {
  
   const [values, setTitle, setDescription] = args
-
+    
+     cutTitle(values, setTitle)
+     cutDescription(values, setDescription)
  
-  titleCommands.forEach((e) =>
-  {
-      const currentCommand = values.substr(0, e.length)
-      if(currentCommand === e)
-      {
-        const currentTitle = values.substr(e.length, values.length)
-        setTitle(currentTitle);
-      }
-  })
-
-
-  contentCommands.forEach((e) =>{
-    const currentCommand = values.substr(0, e.length)
-     if(currentCommand === e)
-     {
-       const currentTitle = values.substr(e.length, values.length)
-       setDescription(currentTitle)
-     }
-  })
-
-
-
 }
+
 
 
 export default setNoteValues;
