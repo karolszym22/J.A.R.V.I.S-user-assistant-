@@ -8,7 +8,7 @@ const SpeechProvider = ({ children }) => {
       const { transcript } = useSpeechRecognition();
       useEffect(()=>{
         SpeechRecognition.startListening({continuous:false})
-        setSpeech(transcript);
+        setSpeech(transcript.toLowerCase());
       })
 
        return (

@@ -1,4 +1,4 @@
-export const titleCommands = ['Dodaj tytuł', 'wstaw tytuł', 'tytuł']
-export const contentCommands = ['Dodaj opis', 'Dodaj treść', 'Opis']
-export const addNoteCommands = ["Dodaj notatkę", "Chciałbym dodać notatkę", "Dodasz notatke", "Nowa notatka"]
-export const deleteNoteCommands = ["Usuń notatkę", "Chciałbym usunąć notatkę", "usuniesz notatkę", "usuń mi notatkę"]
+export const titleCommands = ['dodaj tytuł', 'wstaw tytuł', 'tytuł', 'a tytuł to będzie','a tytuł to będzie', 'a tytuł  niech będzie']
+export const contentCommands = ['dodaj opis', 'dodaj treść', 'opis', 'a opis to będzie', 'opis to będzie']
+export const addNoteCommands = ["dodaj notatkę", "chciałbym dodać notatkę", "dodasz notatke", "nowa notatka"]
+export const deleteNoteCommands = ["usuń notatkę", "chciałbym usunąć notatkę", "usuniesz notatkę", "usuń mi notatkę"]
