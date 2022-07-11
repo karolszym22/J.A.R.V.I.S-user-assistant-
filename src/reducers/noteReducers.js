@@ -3,22 +3,7 @@ import noteRemoveInformation from "../Functions/JarvisRemarks/note_remove_remark
 
 const initialState = {
     notes: [
-    {
-        id: 1,
-        title: "Zakupy",
-        content: "Kupic rzeczy na obiad"
-    },
-    {
-        id: 2,
-        title: "Posprzatac w domu",
-        content: "Umyc meble, odkurzyc caly dom"
-    },
-    {
-        id: 3,
-        title: "Kino",
-        content: "Wieczorem kino z horrorem",
-        
-    }
+    
     ]
     
 }
