@@ -1,11 +1,11 @@
-import { contentCommands } from "../../../../Commands/note_commands"
+import { addContentCommands } from "../../../../Commands/note_commands"
 
 
 const cutDescription = (...args) =>
   {
      const [values, setDescription] = args
 
-    contentCommands.forEach((e) =>{
+    addContentCommands.forEach((e) =>{
        const currentCommand = values.substr(0, e.length)
          if(currentCommand === e)
            {
