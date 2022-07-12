@@ -15,7 +15,7 @@ const ReactorTemplete = () =>
 (
     <StyledDiv>
         <ReactorMenu></ReactorMenu>
-        <DataMenu></DataMenu>
+        <DataMenu>WTOREK</DataMenu>
         <TimeMenu></TimeMenu>
         <WeatherMenu ></WeatherMenu>
         <NotesMenu></NotesMenu>
