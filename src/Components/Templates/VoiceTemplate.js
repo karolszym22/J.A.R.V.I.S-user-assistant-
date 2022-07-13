@@ -65,13 +65,13 @@ const VoiceTemplate = ({behavior, addNoteByVoice}) => {
 
        const deleteNote = () =>
         {
-           cutTitle(currentSpeech, setTitle)
+           //cutTitle(currentSpeech, setTitle)
            deleteNoteValidation(title, setNoteTitle)
            console.log(title)
              if(noteTitle === true && speech.length === SPEECH_LENGTH)
                {
                  alert("UDAŁO SIE!")
-                 deleteNoteByVoice(title)
+                 //deleteNoteByVoice(title)
                }
               
         }
@@ -92,7 +92,7 @@ const mapStateToProps = state => {
   const mapDispatchToProps = dispatch => ({
     
     addNoteByVoice: (title,description) => dispatch(addNoteByVoiceAction(title, description)),
-    deleteNoteByVoice: (title) => dispatch(deleteNoteByVoiceAction(title))
+    //deleteNoteByVoice: (title) => dispatch(deleteNoteByVoiceAction(title))
     
 })
 
