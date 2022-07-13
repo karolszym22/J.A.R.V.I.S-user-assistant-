@@ -1,14 +1,13 @@
 import React, {useEffect, useContext, useState} from 'react';
 import { SpeechContext } from "../../context/SpeechContext";
 import { connect } from 'react-redux/es/exports';
-import getNoteValues from '../../Functions/CommandInteractions/Interactions/get_note_values';
-import {addNoteByVoice as addNoteByVoiceAction, deleteNoteByVoice as deleteNoteByVoiceAction } from '../../actions/handle_note_actions'
+import processMessage from '../../Functions/CommandInteractions/Interactions/Helpers/process_message';
+import {addNoteByVoice as addNoteByVoiceAction } from '../../actions/handle_note_actions'
 import addNoteValidation from '../../Functions/CommandInteractions/Interactions/Validations/Note/add_note_validation';
 import deleteNoteValidation from '../../Functions/CommandInteractions/Interactions/Validations/Note/delete_note_validation';
-import { deleteTitleCommands } from '../../Commands/note_commands';
-import cutTitle from '../../Functions/CommandInteractions/Interactions/Helpers/cut_title';
-import cutDescription from '../../Functions/CommandInteractions/Interactions/Helpers/cut_description';
-const VoiceTemplate = ({behavior, addNoteByVoice, deleteNoteByVoice}) => {
+import { contentCommands } from '../../Commands/note_commands';
+import { titleCommands } from '../../Commands/note_commands';
+const VoiceTemplate = ({behavior, addNoteByVoice}) => {
 
     const SPEECH_LENGTH = 0;
 
@@ -48,8 +47,9 @@ const VoiceTemplate = ({behavior, addNoteByVoice, deleteNoteByVoice}) => {
 
        const sendNote = () =>
        {
-        cutTitle(currentSpeech, setTitle)
-        cutDescription(currentSpeech, setDescription)
+        processMessage(speech, setTitle, titleCommands)
+        processMessage(speech, setDescription, contentCommands)
+
          addNoteValidation(title, description, setNoteValues)
            if(noteValues === true && speech.length === SPEECH_LENGTH ) 
            {
