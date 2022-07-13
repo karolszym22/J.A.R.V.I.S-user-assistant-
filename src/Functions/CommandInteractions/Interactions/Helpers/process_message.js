@@ -11,7 +11,7 @@ const breakText = (values, setCurrentState, commands) =>
       const currentCommand = values.substr(0, e.length)
         if(currentCommand === e)
           {
-             const currentTitle = values.substr(e.length, values.length)
+             const currentTitle = values.substr(e.length+1, values.length)
              setCurrentState(currentTitle)
           }
          })
