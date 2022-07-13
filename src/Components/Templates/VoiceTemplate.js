@@ -3,16 +3,17 @@ import { SpeechContext } from "../../context/SpeechContext";
 import { connect } from 'react-redux/es/exports';
 import processMessage from '../../Functions/CommandInteractions/Interactions/Helpers/process_message';
 import {addNoteByVoice as addNoteByVoiceAction } from '../../actions/handle_note_actions'
+import { deleteNoteByVoice as deleteNoteByVoiceAction} from '../../actions/handle_note_actions'
 import addNoteValidation from '../../Functions/CommandInteractions/Interactions/Validations/Note/add_note_validation';
 import deleteNoteValidation from '../../Functions/CommandInteractions/Interactions/Validations/Note/delete_note_validation';
-import { contentCommands } from '../../Commands/note_commands';
-import { titleCommands } from '../../Commands/note_commands';
+import { addContentCommands } from '../../Commands/note_commands';
+import { addTitleCommands } from '../../Commands/note_commands';
+
 const VoiceTemplate = ({behavior, addNoteByVoice}) => {
 
     const SPEECH_LENGTH = 0;
 
     const speech = useContext(SpeechContext) 
-   
     const [currentSpeech, setCurrentSpeech] = useState('')
     const [currentState, setCurrentState] = useState('')
     const [title, setTitle] = useState('')
@@ -47,14 +48,12 @@ const VoiceTemplate = ({behavior, addNoteByVoice}) => {
 
        const sendNote = () =>
        {
-        processMessage(speech, setTitle, titleCommands)
-        processMessage(speech, setDescription, contentCommands)
+        processMessage(speech, setTitle, addTitleCommands)
+        processMessage(speech, setDescription, addContentCommands)
 
          addNoteValidation(title, description, setNoteValues)
            if(noteValues === true && speech.length === SPEECH_LENGTH ) 
            {
-             console.log(title)
-             console.log(description)
              addNoteByVoice(title, description)
               setTitle('')
               setDescription('')
@@ -92,7 +91,7 @@ const mapStateToProps = state => {
   const mapDispatchToProps = dispatch => ({
     
     addNoteByVoice: (title,description) => dispatch(addNoteByVoiceAction(title, description)),
-    //deleteNoteByVoice: (title) => dispatch(deleteNoteByVoiceAction(title))
+    deleteNoteByVoice: (title) => dispatch(deleteNoteByVoiceAction(title))
     
 })
 
