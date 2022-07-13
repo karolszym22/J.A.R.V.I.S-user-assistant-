@@ -8,8 +8,10 @@ import addNoteValidation from '../../Functions/CommandInteractions/Interactions/
 import deleteNoteValidation from '../../Functions/CommandInteractions/Interactions/Validations/Note/delete_note_validation';
 import { addContentCommands } from '../../Commands/note_commands';
 import { addTitleCommands } from '../../Commands/note_commands';
+import { deleteTitleCommands } from '../../Commands/note_commands'
 
-const VoiceTemplate = ({behavior, addNoteByVoice}) => {
+
+const VoiceTemplate = ({behavior, addNoteByVoice, deleteNoteByVoice}) => {
 
     const SPEECH_LENGTH = 0;
 
@@ -48,8 +50,8 @@ const VoiceTemplate = ({behavior, addNoteByVoice}) => {
 
        const sendNote = () =>
        {
-        processMessage(speech, setTitle, addTitleCommands)
-        processMessage(speech, setDescription, addContentCommands)
+        processMessage(currentSpeech, setTitle, addTitleCommands)
+        processMessage(currentSpeech, setDescription, addContentCommands)
 
          addNoteValidation(title, description, setNoteValues)
            if(noteValues === true && speech.length === SPEECH_LENGTH ) 
@@ -64,13 +66,16 @@ const VoiceTemplate = ({behavior, addNoteByVoice}) => {
 
        const deleteNote = () =>
         {
-           //cutTitle(currentSpeech, setTitle)
+           processMessage(currentSpeech, setTitle, deleteTitleCommands)
            deleteNoteValidation(title, setNoteTitle)
-           console.log(title)
              if(noteTitle === true && speech.length === SPEECH_LENGTH)
                {
-                 alert("UDAŁO SIE!")
-                 //deleteNoteByVoice(title)
+                  deleteNoteByVoice(title)
+                 setTitle('')
+                 setNoteTitle(false)
+                 console.log("UDAŁO SIE!!!!!!!!")
+                
+                 
                }
               
         }
