@@ -24,7 +24,7 @@ export const addNote = (noteContent) =>
 
 export const deleteNoteByVoice = (title) => {
     return {
-        type: "DELETE_NOTE",
+        type: "DELETE_NOTE_BY_VOICE",
         payload:  {
             title,
         }
