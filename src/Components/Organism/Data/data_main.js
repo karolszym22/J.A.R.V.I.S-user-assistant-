@@ -1,5 +1,9 @@
 import React from 'react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components'
+import DataValue from '../../Atoms/Date/data_number'
+import { weekdDays } from '../../info_data_base/week_days';
 
 const StyledDiv = styled.div`
   width: 220px; position: absolute;
@@ -14,6 +18,24 @@ const StyledDiv = styled.div`
 
 `;
 
+const DataMain = () => {
+
+  const [dayName, setDayName] = useState('')
+  const date = new Date();
+
+  useEffect(() => {
+    setDayName(weekdDays[date.getDay()-1]);
+
+  })
 
 
-export default StyledDiv
+
+  return(
+    <StyledDiv>
+      <DataValue>{dayName}</DataValue>
+    </StyledDiv>
+    
+  )
+}
+
+export default DataMain
