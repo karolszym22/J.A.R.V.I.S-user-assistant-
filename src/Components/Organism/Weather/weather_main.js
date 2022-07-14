@@ -1,5 +1,5 @@
 import styled,{ keyframes } from 'styled-components'
-import React, {useEffect} from 'react'
+import React, {useCallback, useEffect} from 'react'
 import WeathereLocation from '../../Atoms/Weather/weather_location'
 import WeatherElementOne from '../../Atoms/Weather/weather_rectangle_1'
 import WeatherElementTwo from '../../Atoms/Weather/weather_rectangle_2'
@@ -36,18 +36,21 @@ const StyledDiv = styled.div`
 
 const WeatherContainerInformations= () =>
 {
+  const [greeting, setGreeting] = React.useState(false)
   const [latitude, setLatitude] = React.useState('');
   const [longitude, setLongitude] = React.useState('');
   const [responseData, setResponseData] = React.useState({});
   const API_key = '66155567e2e08d7f38875d80ccd3e833'
  
- useEffect(() => {
+  const IS_NULL = 0;
+ 
+useEffect(() => {
   navigator.geolocation.getCurrentPosition((position) => {
     setLatitude(position.coords.latitude)
     setLongitude(position.coords.longitude)
   })
   
-  if(latitude && longitude > 0)
+  if(latitude && longitude > IS_NULL)
    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_key}`)
     .then(response => {
         setResponseData(response.data)
@@ -59,9 +62,9 @@ const WeatherContainerInformations= () =>
 
 
   return (
-    
+ 
   <StyledDiv >
-    {    responseData.main ? window.responsiveVoice.speak(responseData.name,`temperatura w tym miejscu wynosi${Math.round(responseData.main.temp)}`,"Polish Male") : console.log('Loading...')}
+    { responseData.main && greeting === false ? window.responsiveVoice.speak(`lokalizacja ${responseData.name}, w lokalizacji ktróej się znajdujesz temperatura wynosi ${Math.round(responseData.main.temp)} stopni celsjusza, wiatr natomiast wynosi ${Math.round(responseData.wind.speed*3)} kilometry na godzinę`,"Polish Male") : null}
   <WeathereLocation>{responseData.name}</WeathereLocation>
   < WeatherElementOne>
           <WeatherElementTwo>
