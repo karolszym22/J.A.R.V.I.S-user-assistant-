@@ -3,7 +3,7 @@ import noteRemoveInformation from "../Functions/JarvisRemarks/note_remove_remark
 
 const initialState = {
     notes: [
-    
+      
     ]
     
 }
@@ -17,21 +17,23 @@ const noteReducer = (state = initialState, action) => {
     {
         case ('DELETE_NOTE'):
             noteRemoveInformation()
+            console.log(action.payload.id)
             return {
                 ...state, 
                     notes: state.notes.filter((item) => item.id !== action.payload.id) 
                 };
         case ('DELETE_NOTE_BY_VOICE'):
-            noteRemoveInformation()
-                    return {
+           // noteRemoveInformation()
+            return {
                  ...state, 
-                     notes: state.notes.filter((item) => item.id !== action.payload.title) 
-                        };
+                     
+                     notes: state.notes.filter((item) => item.title !== action.payload.title) 
+                };
          case ('ADD_NOTE'):
             noteAddInformation()
               return {...state, notes: [...state.notes, action.payload.note]};
          case ('ADD_NOTE_BY_VOICE'):
-            
+       
             noteAddInformation()
                   return {...state, notes: [...state.notes, action.payload.note]};
             

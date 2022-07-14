@@ -71,11 +71,8 @@ const VoiceTemplate = ({behavior, addNoteByVoice, deleteNoteByVoice}) => {
              if(noteTitle === true && speech.length === SPEECH_LENGTH)
                {
                   deleteNoteByVoice(title)
-                 setTitle('')
-                 setNoteTitle(false)
-                 console.log("UDAŁO SIE!!!!!!!!")
-                
-                 
+                  setTitle('')
+                  setNoteTitle(false)   
                }
               
         }

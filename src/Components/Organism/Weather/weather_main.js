@@ -1,5 +1,5 @@
 import styled,{ keyframes } from 'styled-components'
-import React from 'react'
+import React, {useEffect} from 'react'
 import WeathereLocation from '../../Atoms/Weather/weather_location'
 import WeatherElementOne from '../../Atoms/Weather/weather_rectangle_1'
 import WeatherElementTwo from '../../Atoms/Weather/weather_rectangle_2'
@@ -41,8 +41,7 @@ const WeatherContainerInformations= () =>
   const [responseData, setResponseData] = React.useState({});
   const API_key = '66155567e2e08d7f38875d80ccd3e833'
  
- 
-React.useEffect(() => {
+ useEffect(() => {
   navigator.geolocation.getCurrentPosition((position) => {
     setLatitude(position.coords.latitude)
     setLongitude(position.coords.longitude)
@@ -52,6 +51,7 @@ React.useEffect(() => {
    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_key}`)
     .then(response => {
         setResponseData(response.data)
+       
     })
   
   
@@ -61,6 +61,7 @@ React.useEffect(() => {
   return (
     
   <StyledDiv >
+    {    responseData.main ? window.responsiveVoice.speak(responseData.name,`temperatura w tym miejscu wynosi${Math.round(responseData.main.temp)}`,"Polish Male") : console.log('Loading...')}
   <WeathereLocation>{responseData.name}</WeathereLocation>
   < WeatherElementOne>
           <WeatherElementTwo>
