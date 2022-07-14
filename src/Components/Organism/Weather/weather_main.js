@@ -78,7 +78,7 @@ useEffect(() => {
               </WeatherContainer>
               <WeatherContainer >
                    <WeatherTemp>Wiatr</WeatherTemp>
-                   <WeatherTemp>30/h*</WeatherTemp>
+                   <WeatherTemp>{responseData.main ? Math.round(responseData.wind.speed*3) : ('Loading...')}</WeatherTemp>
               </WeatherContainer>
           </WeatherElementTwo>
   </WeatherElementOne>
