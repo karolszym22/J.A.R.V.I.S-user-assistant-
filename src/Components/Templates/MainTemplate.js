@@ -4,7 +4,8 @@ import { updateBehavior as updateBehaviorAction } from '../../actions/speech_beh
 import behaviorSubscribe from '../../Functions/VoiceSubscribe/voice_interactions';
 import { ThemeProvider } from "styled-components"
 import { connect } from 'react-redux/es/exports';
-import VoiceTemplate from './VoiceTemplate';
+import DoThingsByVoice from './DoThingsByVoice';
+import SearchThingsByVoice from './SearchThingsByVoice';
 import GlobalStyle from "../../Theme/GlobalStyles"
 import { theme } from "../../Theme/main_theme"
 import Main from '../Organism/Menu/main_menu'
@@ -46,9 +47,10 @@ const MainTemplate = ({children, updateBehavior}) => {
     <div>
     <GlobalStyle/>
        <Main></Main>
-       <VoiceTemplate state = {state}></VoiceTemplate>
-       <ThemeProvider theme={theme}>
-      <>{children}</>
+          <DoThingsByVoice state = {state}></DoThingsByVoice>
+          <SearchThingsByVoice speech = {speech}></SearchThingsByVoice>
+      <ThemeProvider theme={theme}>
+        <>{children}</>
     </ThemeProvider>
   </div>
   )
