@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+J.A.R.V.I.S jest to aplikacja asystenta głosowego która pomaga użytkownikowi w różnych czynnościach. Projekt został napisany w takich technologiach jak: React, Redux, Hooks, Styled Components. Pierwsza wersja potrafi ręcznie po albo wydaniu komendy:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-dodać notatkę podając tytuł oraz opis
+-usunąć notatkę klikając na przycisk "delete" lub po wydaniu komendy usunięcia notatki a potem podając jej tytuł
+-nawigacja między lokalizacjami strony
+-wyszukać informacji o interesującej nas rzeczy na stronie wikipedia
 
-## Available Scripts
+Głosowa interacja między aplikacją może być dynamiczna albo ciągła:
 
-In the project directory, you can run:
+-dynamiczna wtedy kiedy od razu podajemy komendę po której wykonuje się czynność na przykład: "Poszukaj informacji o <wartość której szukamy>". Aplikacja od razu zareaguje, otwierając kartę z wynikiem na stronie Wikipedia
 
-### `npm start`
+-ciągła natomiast to dłuższy dialog z aplikacją. Przykładowo chcemy dodać notatkę, użytkownik wypowiada komendę : "Dodaj notatkę" następnie funkcja sprawdza czy taka komenda znajduje się w bazie komend, jeśli tak, aplikacja przyjmuje określony stan na 3 sekundy. W tym przypadku użytkownik ma 3 sekundy na to aby podać tytuł oraz opis notatki (kolejność bez znaczenia). Warto podreślić, że użytkownik nie musi się spieszyć, funkcja ustawiająca wartortość stanu na domyślną, jest synchroniczna więc każde wypowiedziane słowo przez użytkownika, resetuje tą funkcję.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Program wykorzystuje biblioteki i paczki takie jak: 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-Formik
+-React Router Dom
+-React Redux
+-ReduxJs/Toolkit
+-Axios
+-React-Speech-Recognition
 
-### `npm test`
+Wykorzystuję również API ResponsiveVoice która komentuję nasze poczynania
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Program również na starcie informuje nas wykorzystując syntezator mowy ResponsiveVoice o naszej lokalizacji oraz temperaturze pogody i szybkości wiatru.
 
-### `npm run build`
+Po odpaleniu apki, intefejs informuje nas o godzinie, dniu tygodnia, lokalizacji oraz pokazuje stan pogody:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![example1](https://user-images.githubusercontent.com/32464644/179853757-d804198f-4405-4f90-aa15-79d9b6941454.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Kontener z notatkami:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![example2](https://user-images.githubusercontent.com/32464644/179853800-f6dd63f7-0572-4629-aa92-cd725083dde7.png)
 
-### `npm run eject`
+Strona gdzie użytkownik może poszukać informacji:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![example3](https://user-images.githubusercontent.com/32464644/179853824-0c8c1e38-9ba7-47d7-96cd-4a51426c798a.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
