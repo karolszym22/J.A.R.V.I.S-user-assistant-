@@ -69,7 +69,6 @@ useEffect(() => {
   < WeatherElementOne>
           <WeatherElementTwo>
           <WeatherContainer >
-                   <WeatherTemp>Pogoda</WeatherTemp>
                    <WeatherTemp></WeatherTemp>
               </WeatherContainer>
               <WeatherContainer >
@@ -78,7 +77,7 @@ useEffect(() => {
               </WeatherContainer>
               <WeatherContainer >
                    <WeatherTemp>Wiatr</WeatherTemp>
-                   <WeatherTemp>{responseData.main ? Math.round(responseData.wind.speed*3) : ('Loading...')}</WeatherTemp>
+                   <WeatherTemp>{responseData.main ? `${Math.round(responseData.wind.speed*3)}km/h` : ('Loading...')}</WeatherTemp>
               </WeatherContainer>
           </WeatherElementTwo>
   </WeatherElementOne>
