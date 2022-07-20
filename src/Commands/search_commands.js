@@ -1,0 +1,1 @@
+export const searchInformations = ['znajdz mi informacje na temat', 'poszukaj mi informacji o', 'poszukaj mi informacji na temat']
